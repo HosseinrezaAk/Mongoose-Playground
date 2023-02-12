@@ -51,10 +51,20 @@ const banana = new Fruit({
 });
 
 
-Fruit.insertMany([kiwi, orange, banana], function(err){
+// Fruit.insertMany([kiwi, orange, banana], function(err){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("Successfuly saved all the fruits");
+//     }
+// });
+
+// READING DATA
+Fruit.find( function(err, fruits){
     if(err){
         console.log(err);
+
     }else{
-        console.log("Successfuly saved all the fruits");
+        console.log(fruits);
     }
 });

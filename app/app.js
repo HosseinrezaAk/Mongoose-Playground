@@ -5,15 +5,22 @@ mongoose.set('strictQuery', false);
 mongoose.connect("mongodb://localhost:27017/fruitsDB",{ useNewUrlParser: true });
 
 const fruitSchema = new Schema({
-    name: String,
-    rating: Number,
+    name: { //data validation with specific validation message
+        type: String,
+        required: [true, "Please check your entry, no name specified"]
+    },
+    rating: { //data validation
+        type: Number,
+        min:1,
+        max:10
+    },
     review: String
 });
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 const fruit = new Fruit ({
-    name: "Apple",
-    rating: 7,
+   
+    rating: 4,
     review: "Pretty solid as a fruit."
 });
 

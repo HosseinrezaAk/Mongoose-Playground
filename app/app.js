@@ -29,5 +29,25 @@ const person = new Person({
     age: 25
 });
 
-person.save();
+// person.save();
+
+// INSERT MANY
+const kiwi = new Fruid({
+    name: "Kiwi",
+    rating : 9,
+    review: "the best"
+});
+
+const orange = new Fruid({
+    name: "Orange",
+    rating : 6,
+    review: "tasty"
+});
+
+const Banana = new Fruid({
+    name: "Banana",
+    rating : 10,
+    review: "the King"
+});
+
 

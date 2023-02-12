@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-mongoose.connect("mongodb://localhost:27017/fruitsDB");
+mongoose.set('strictQuery', false);
+mongoose.connect("mongodb://localhost:27017/fruitsDB",{ useNewUrlParser: true });
 
 const fruitSchema = new Schema({
     name: String,
@@ -17,4 +18,16 @@ const fruit = new Fruit ({
 });
 
 // fruit.save();
+const personSchema = new Schema({
+    name: String,
+    age: Number
+});
+
+const Person = mongoose.model("Person", personSchema);
+const person = new Person({
+    name : "John",
+    age: 25
+});
+
+person.save();
 

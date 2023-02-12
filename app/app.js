@@ -32,22 +32,29 @@ const person = new Person({
 // person.save();
 
 // INSERT MANY
-const kiwi = new Fruid({
+const kiwi = new Fruit({
     name: "Kiwi",
     rating : 9,
     review: "the best"
 });
 
-const orange = new Fruid({
+const orange = new Fruit({
     name: "Orange",
     rating : 6,
     review: "tasty"
 });
 
-const Banana = new Fruid({
+const banana = new Fruit({
     name: "Banana",
     rating : 10,
     review: "the King"
 });
 
 
+Fruit.insertMany([kiwi, orange, banana], function(err){
+    if(err){
+        console.log(err);
+    }else{
+        console.log("Successfuly saved all the fruits");
+    }
+});

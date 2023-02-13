@@ -27,16 +27,23 @@ const fruit = new Fruit ({
 // fruit.save();
 const personSchema = new Schema({
     name: String,
-    age: Number
+    age: Number,
+    favouriteFruit: fruitSchema
 });
 
 const Person = mongoose.model("Person", personSchema);
+const pineapple = new Fruit({
+    name : "Pineapple",
+    rating: 6,
+    review: "not bad"
+});
 const person = new Person({
-    name : "John",
-    age: 25
+    name : "Alex",
+    age: 23,
+    favouriteFruit: pineapple
 });
 
-// person.save();
+person.save();
 
 // INSERT MANY
 const kiwi = new Fruit({
@@ -91,10 +98,12 @@ Fruit.find( function(err, fruits){
 //    } 
 // });
 
-Fruit.deleteOne({name: "Peach"},function(err){
-    if(err){
-        console.log(err);
-    }else{
-        console.log("Successfuly deleted the data");
-    }
-})
+// Fruit.deleteOne({name: "Peach"},function(err){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("Successfuly deleted the data");
+//     }
+// })
+
+

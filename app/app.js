@@ -18,13 +18,13 @@ const fruitSchema = new Schema({
 });
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
-const fruit = new Fruit ({
-   
-    rating: 4,
-    review: "Pretty solid as a fruit."
+const pineapple = new Fruit({
+    name : "Pineapple",
+    rating: 6,
+    review: "not bad"
 });
+pineapple.save();
 
-// fruit.save();
 const personSchema = new Schema({
     name: String,
     age: Number,
@@ -32,11 +32,7 @@ const personSchema = new Schema({
 });
 
 const Person = mongoose.model("Person", personSchema);
-const pineapple = new Fruit({
-    name : "Pineapple",
-    rating: 6,
-    review: "not bad"
-});
+
 const person = new Person({
     name : "Alex",
     age: 23,
@@ -97,6 +93,8 @@ Fruit.find( function(err, fruits){
 //     console.log('Successfuly Updated the document');
 //    } 
 // });
+
+// DELETE
 
 // Fruit.deleteOne({name: "Peach"},function(err){
 //     if(err){

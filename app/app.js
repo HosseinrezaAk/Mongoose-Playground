@@ -18,6 +18,7 @@ const fruitSchema = new Schema({
 });
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
+
 const pineapple = new Fruit({
     name : "Pineapple",
     rating: 6,
